@@ -101,6 +101,37 @@ Statistical Plots White Wine:
 ![ ](quality-pH-white2.png)
 ![ ](quality-residual-white2.png)
 
+Code for White Wine Scatter Plots:
+```r
+{
+    p <- ggplot(wine_white, aes(x = quality, y = .data[[feature]])) +
+        geom_point(alpha = 0.5, color = "darkblue") +
+        geom_smooth(method = "lm", color = "red", se = FALSE) +
+        labs(title = paste("Quality vs", feature, "(White Wine)"),
+             x = "Quality Score",
+             y = feature) +
+        theme_minimal()
+    print(p)
+}
+```
+
+Code for White Wine Box Plots:
+```r
+library(ggplot2)
+
+features <- c("fixed.acidity", "volatile.acidity", "citric.acid", "pH", "residual.sugar")
+
+for (feature in features) {
+    p <- ggplot(wine_white, aes(x = factor(quality), y = .data[[feature]])) +
+        geom_boxplot(fill = "skyblue") +
+        labs(title = paste("Distribution of", feature, "by Wine Quality"),
+             x = "Quality Score",
+             y = feature) +
+        theme_minimal()
+    print(p)
+}
+```
+
 ### Statistical Analysis Results:
 
 #### 1. Fixed Acidity vs. Quality (White Wines)
@@ -161,6 +192,99 @@ Statistical Plots Red Wine:
 ![ ](citric-red2.png)
 ![ ](pH-red2.png)
 ![ ](residual-red2.png)
+
+Code for Red Wine Scatter Plots Plots:
+```r
+# Scatterplots with regression lines for Red Wine
+
+# Plot for fixed.acidity vs quality
+ggplot(wine_red, aes(x = quality, y = fixed.acidity)) +
+    geom_point(alpha = 0.5, color = "darkred") +  # Scatter plot points
+    geom_smooth(method = "lm", color = "black", se = FALSE) +  # Regression line
+    labs(title = "Quality vs Fixed Acidity (Red Wine)",
+         x = "Quality Score",
+         y = "Fixed Acidity") +
+    theme_minimal()
+
+# Plot for volatile.acidity vs quality
+ggplot(wine_red, aes(x = quality, y = volatile.acidity)) +
+    geom_point(alpha = 0.5, color = "darkred") +
+    geom_smooth(method = "lm", color = "black", se = FALSE) +
+    labs(title = "Quality vs Volatile Acidity (Red Wine)",
+         x = "Quality Score",
+         y = "Volatile Acidity") +
+    theme_minimal()
+
+# Plot for citric.acid vs quality
+ggplot(wine_red, aes(x = quality, y = citric.acid)) +
+    geom_point(alpha = 0.5, color = "darkred") +
+    geom_smooth(method = "lm", color = "black", se = FALSE) +
+    labs(title = "Quality vs Citric Acid (Red Wine)",
+         x = "Quality Score",
+         y = "Citric Acid") +
+    theme_minimal()
+
+# Plot for pH vs quality
+ggplot(wine_red, aes(x = quality, y = pH)) +
+    geom_point(alpha = 0.5, color = "darkred") +
+    geom_smooth(method = "lm", color = "black", se = FALSE) +
+    labs(title = "Quality vs pH (Red Wine)",
+         x = "Quality Score",
+         y = "pH") +
+    theme_minimal()
+
+# Plot for residual.sugar vs quality
+ggplot(wine_red, aes(x = quality, y = residual.sugar)) +
+    geom_point(alpha = 0.5, color = "darkred") +
+    geom_smooth(method = "lm", color = "black", se = FALSE) +
+    labs(title = "Quality vs Residual Sugar (Red Wine)",
+         x = "Quality Score",
+         y = "Residual Sugar") +
+    theme_minimal()
+```
+
+Code for Red Wine Box Plots:
+```r
+# Box plot for Fixed Acidity vs Quality
+ggplot(wine_red, aes(x = as.factor(quality), y = fixed.acidity)) +
+    geom_boxplot(fill = "darkred", color = "black") +
+    labs(title = "Fixed Acidity vs Quality (Red Wine)",
+         x = "Quality Score",
+         y = "Fixed Acidity") +
+    theme_minimal()
+
+# Box plot for Volatile Acidity vs Quality
+ggplot(wine_red, aes(x = as.factor(quality), y = volatile.acidity)) +
+    geom_boxplot(fill = "darkred", color = "black") +
+    labs(title = "Volatile Acidity vs Quality (Red Wine)",
+         x = "Quality Score",
+         y = "Volatile Acidity") +
+    theme_minimal()
+
+# Box plot for Citric Acid vs Quality
+ggplot(wine_red, aes(x = as.factor(quality), y = citric.acid)) +
+    geom_boxplot(fill = "darkred", color = "black") +
+    labs(title = "Citric Acid vs Quality (Red Wine)",
+         x = "Quality Score",
+         y = "Citric Acid") +
+    theme_minimal()
+
+# Box plot for pH vs Quality
+ggplot(wine_red, aes(x = as.factor(quality), y = pH)) +
+    geom_boxplot(fill = "darkred", color = "black") +
+    labs(title = "pH vs Quality (Red Wine)",
+         x = "Quality Score",
+         y = "pH") +
+    theme_minimal()
+
+# Box plot for Residual Sugar vs Quality
+ggplot(wine_red, aes(x = as.factor(quality), y = residual.sugar)) +
+    geom_boxplot(fill = "darkred", color = "black") +
+    labs(title = "Residual Sugar vs Quality (Red Wine)",
+         x = "Quality Score",
+         y = "Residual Sugar") +
+    theme_minimal()
+```
 
 #### 1. Fixed Acidity vs. Quality (Red Wines)
 - **Correlation coefficient (r)**: 0.1241
