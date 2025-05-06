@@ -1,155 +1,93 @@
-# Harrison Pratt  
-**Professor Lopez**  
-**Principles of Data Science**  
-**April 28, 2025**
+# Wine Quality Analysis: Exploratory Data Analysis in R
 
-## Exploratory Data Analysis in R
-
----
-
-### 1) Business Understanding
-
-When determining if a wine is considered high-quality, there are certain attributes that good wines often have. One of these is **acidity** — a medium amount can add freshness and structure, while too much or too little can unbalance a wine. 
-
-Another factor is **pH**. A pH that is too low or too high can negatively impact the taste, making the wine lower-quality.  
-
-Finally, **residual sugar** also plays a critical role. Too much or too little can create imbalanced flavors.  
-
-Having a balance between these attributes helps create a **balanced wine with complexity**, which are hallmarks of high-quality wine.
-
-**Sources for Understanding:**
-- [Perceiving Acidity in Wine – Wine Spectator](https://www.winespectator.com/articles/perceiving-acidity-in-wine)
-- [Sugar in Wine – Decanter China](https://www.decanterchina.com/en/news/Decanter%20Features/sugar-in-wine)
-- [Sugar Content in Wine – Farang Wine](https://www.farangwine.com/sugar-content-in-wine-explained-which-wines-have-the-most-and-least-sugar)
-- [What Makes a Wine Good – Medium (Data Science)](https://medium.com/data-science/what-makes-a-wine-good-ea370601a8e4)
+**Author:** Harrison Pratt  
+**Course:** Principles of Data Science  
+**Professor:** Professor Lopez  
+**Date:** April 28, 2025  
 
 ---
 
-### 2) Data Understanding
+## 1. Business Understanding
 
-This dataset gathers information from red and white *Vinho Verde* wine samples from Northern Portugal.
+High-quality wines often exhibit balance in key chemical properties. Specifically:
 
-- **Red wine samples**: 1,599  
-- **White wine samples**: 4,898  
-- **Total samples**: 6,497
+- **Acidity:** A medium amount adds freshness and structure. Too much or too little unbalances a wine.
+- **pH Level:** An optimal pH supports stability and taste; extreme values diminish quality.
+- **Residual Sugar:** Impacts flavor; both excess and deficiency can reduce wine balance.
 
-There are:
-- **11 continuous variables**
-- **1 ordinal (integer) variable**
-- **1 categorical variable**
-
-| Variable Name         | Measurement Scale | Type        | Description                            |
-|----------------------|-------------------|-------------|----------------------------------------|
-| fixed_acidity        | Ratio             | Continuous  | Tartaric acid level                    |
-| volatile_acidity     | Ratio             | Continuous  | Acetic acid (wine fault)               |
-| citric_acid          | Ratio             | Continuous  | Citric acid level                      |
-| residual_sugar       | Ratio             | Continuous  | Sugar left after fermentation          |
-| chlorides            | Ratio             | Continuous  | Salt content                           |
-| free_sulfur_dioxide  | Ratio             | Continuous  | Preservative for freshness             |
-| total_sulfur_dioxide | Ratio             | Continuous  | Total sulfur dioxide                   |
-| density              | Ratio             | Continuous  | Density of the wine                    |
-| pH                   | Interval          | Continuous  | Acidity level (lower = more acidic)    |
-| sulphates            | Ratio             | Continuous  | Wine preservative                      |
-| alcohol              | Ratio             | Continuous  | Alcohol content                        |
-| quality              | Ordinal           | Integer     | Wine quality score (0–10)              |
-| color                | Nominal           | Categorical | Type of wine: red or white             |
+**Sources:**
+- [Wine Spectator - Perceiving Acidity in Wine](https://www.winespectator.com/articles/perceiving-acidity-in-wine)  
+- [Decanter China - Sugar in Wine](https://www.decanterchina.com/en/news/Decanter%20Features/sugar-in-wine)  
+- [Farang Wine - Sugar Content in Wine Explained](https://www.farangwine.com/sugar-content-in-wine-explained-which-wines-have-the-most-and-least-sugar)  
+- [Medium - What Makes a Wine Good](https://medium.com/data-science/what-makes-a-wine-good-ea370601a8e4)
 
 ---
 
-### 3) Data Preparation
+## 2. Data Understanding
 
-The data was downloaded from the [UCI Wine Quality Dataset](https://archive.ics.uci.edu/dataset/186/wine+quality).
+The dataset combines red and white Vinho Verde wine samples from Portugal:
 
-The ZIP file included:
-- `winequality-red.csv`: Red wine data
-- `winequality-white.csv`: White wine data
-- `winequality.names`: Metadata and citation info
+- **White wine samples:** 4,898  
+- **Red wine samples:** 1,599  
+- **Total samples:** 6,497  
+- **Attributes:** 11 continuous variables, 1 integer (quality), 1 categorical (color)
 
-I merged and labeled the datasets with a `color` column to distinguish between red and white wines.
-
----
-
-### 4) Modeling + Evaluating (Exploratory Data Analysis)
-
-We investigated the following hypotheses based on wine chemistry and expert knowledge.
-
-#### Hypotheses:
-
-- **Acidity Hypothesis (Fixed Acidity)**  
-  - H₀: No significant relationship between fixed acidity and wine quality  
-  - H₁: Moderate fixed acidity improves wine quality
-
-- **pH Hypothesis**  
-  - H₀: No significant relationship between pH and wine quality  
-  - H₁: Moderate pH levels improve wine quality
-
-- **Residual Sugar Hypothesis**  
-  - H₀: No significant relationship between residual sugar and wine quality  
-  - H₁: Balanced residual sugar improves wine quality
+| Variable Name            | Type       | Description                          |
+|--------------------------|------------|--------------------------------------|
+| fixed_acidity            | Continuous | Tartaric acid level                  |
+| volatile_acidity         | Continuous | Acetic acid (wine fault)             |
+| citric_acid              | Continuous | Citric acid content                  |
+| residual_sugar           | Continuous | Sugar left after fermentation        |
+| chlorides                | Continuous | Salt content                         |
+| free_sulfur_dioxide      | Continuous | Free SO₂                             |
+| total_sulfur_dioxide     | Continuous | Total SO₂                            |
+| density                  | Continuous | Density                              |
+| pH                       | Continuous | Acidity level (inverse scale)        |
+| sulphates                | Continuous | Sulfate content                      |
+| alcohol                  | Continuous | Alcohol content                      |
+| quality                  | Integer    | Quality rating (0–10)                |
+| color                    | Categorical| Wine type: red or white              |
 
 ---
 
-### White Wine Results
+## 3. Data Preparation
 
-#### 1. Fixed Acidity vs. Quality
-- **Correlation (r)**: -0.1137  
-- **t-statistic**: -8.005  
-- **p-value**: 1.48 × 10⁻¹⁵  
-- **CI (95%)**: [-0.1412, -0.0859]  
-🟡 Weak **negative** correlation — higher acidity slightly lowers quality.
+The data was downloaded from the UCI Machine Learning Repository:  
+https://archive.ics.uci.edu/dataset/186/wine+quality
 
-#### 2. pH vs. Quality
-- **Correlation (r)**: 0.0994  
-- **t-statistic**: 6.992  
-- **p-value**: 3.08 × 10⁻¹²  
-- **CI (95%)**: [0.0716, 0.1271]  
-🟢 Weak **positive** correlation — balanced pH slightly improves quality.
-
-#### 3. Residual Sugar vs. Quality
-- **Correlation (r)**: -0.0976  
-- **t-statistic**: -6.860  
-- **p-value**: 7.72 × 10⁻¹²  
-- **CI (95%)**: [-0.1252, -0.0698]  
-🔴 Weak **negative** correlation — excessive sugar slightly reduces quality.
+Steps:
+1. Unzip the downloaded folder.
+2. Load `winequality-red.csv` and `winequality-white.csv`.
+3. Combine datasets for analysis and add a `color` column to distinguish types.
 
 ---
 
-### Red Wine Results
+## 4. Modeling & Evaluation
 
-#### 1. Fixed Acidity vs. Quality
-- **Correlation (r)**: 0.1241  
-- **t-statistic**: 4.996  
-- **p-value**: 6.50 × 10⁻⁷  
-- **CI (95%)**: [0.0755, 0.1720]  
-🟢 Weak **positive** correlation — slight quality increase with acidity.
+We conducted exploratory data analysis (EDA) and correlation testing on three hypotheses.
 
-#### 2. pH vs. Quality
-- **Correlation (r)**: -0.0577  
-- **t-statistic**: -2.311  
-- **p-value**: 0.02096  
-- **CI (95%)**: [-0.1065, -0.0087]  
-🟡 Slight **negative** correlation — lower pH (higher acidity) slightly improves quality.
+### Hypotheses
 
-#### 3. Residual Sugar vs. Quality
-- **Correlation (r)**: 0.0137  
-- **t-statistic**: 0.5488  
-- **p-value**: 0.5832  
-- **CI (95%)**: [-0.0353, 0.0627]  
-⚪ **No significant correlation** — residual sugar does not affect quality.
+| Hypothesis                    | Null Hypothesis (H₀)                                               | Alternative Hypothesis (H₁)                                               |
+|------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------------|
+| Fixed Acidity                | No significant relationship with quality                           | Moderate fixed acidity contributes to higher quality                      |
+| pH                           | No significant relationship with quality                           | Optimal pH contributes to higher quality                                  |
+| Residual Sugar               | No significant relationship with quality                           | Balanced residual sugar contributes to higher quality                     |
 
 ---
 
-### Conclusion
+## 5. EDA: Boxplots (White Wine)
 
-This analysis explored how **acidity**, **pH**, and **residual sugar** relate to wine quality in both red and white wines.
+```r
+library(ggplot2)
 
-- For **white wines**, acidity and sugar both had a small **negative** impact on quality, while a balanced pH had a **positive** impact.
-- For **red wines**, fixed acidity showed a **positive** effect, lower pH slightly improved quality, and residual sugar had **no impact**.
+features <- c("fixed.acidity", "volatile.acidity", "citric.acid", "pH", "residual.sugar")
 
-These findings align with expert insights: balance is crucial. Although statistically significant, the **correlations were weak**, suggesting **other factors and personal taste play a large role** in wine quality evaluation.
-
----
-
-### 5) Deployment
-
-This markdown report was prepared with clear headings, formatting, and structure for GitHub display. Findings are logically organized and statistically supported. All data preparation steps, hypotheses, and interpretations are explained in a clean, readable manner.
+for (feature in features) {
+    p <- ggplot(wine_white, aes(x = factor(quality), y = .data[[feature]])) +
+        geom_boxplot(fill = "skyblue") +
+        labs(title = paste("Distribution of", feature, "by Wine Quality"),
+             x = "Quality Score", y = feature) +
+        theme_minimal()
+    print(p)
+}
