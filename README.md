@@ -342,15 +342,6 @@ This analysis investigated how attributes like acidity, pH, and residual sugar i
 
 These results support the idea that wine characteristics play a role in quality, but taste and personal preferences remain crucial factors in wine evaluation.
 
----
-
-## 5. Deployment
-
 The findings of this exploratory data analysis can be used to guide winemakers in balancing important factors like acidity, pH, and residual sugar. Understanding the relationships between these attributes and wine quality allows for more informed decisions during the winemaking process.
-
----
-
-**Code Comments and Formatting**:
-The R code for this analysis is well-commented to ensure clarity. Visualizations, assumptions checks, and results interpretation were handled step-by-step for transparency.
 
 ---
