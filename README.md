@@ -17,6 +17,13 @@ When determining if a wine is considered high-quality, there are certain attribu
 
 A balance between these attributes helps create a wine with complexity, which is vital for a good wine.
 
+## Sources for Understanding:
+
+- [Perceiving Acidity in Wine - Wine Spectator](https://www.winespectator.com/articles/perceiving-acidity-in-wine)
+- [Sugar in Wine - Decanter China](https://www.decanterchina.com/en/news/Decanter%20Features/sugar-in-wine)
+- [Sugar Content in Wine Explained - Farang Wine](https://www.farangwine.com/sugar-content-in-wine-explained-which-wines-have-the-most-and-least-sugar)
+- [What Makes a Wine Good - Medium](https://medium.com/data-science/what-makes-a-wine-good-ea370601a8e4)
+
 ---
 
 ## 2. Data Understanding
