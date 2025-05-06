@@ -91,13 +91,11 @@ The EDA process includes visualizations, statistical tests, and hypothesis testi
 - **95% Confidence Interval**: [-0.1412, -0.0859]
 
 Code:
-<pre>
-\`\`\`r
+```r
 # Correlation test for fixed.acidity vs. quality (white wines)
 cor_test_fixed_acidity <- cor.test(wine_data$fixed.acidity, wine_data$quality)
 cor_test_fixed_acidity
-\`\`\`
-</pre>
+```
 
 The negative correlation is statistically significant (p < 0.001), though weak. As fixed acidity increases, quality slightly decreases.
 
