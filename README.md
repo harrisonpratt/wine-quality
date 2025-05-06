@@ -89,9 +89,17 @@ The EDA process includes visualizations, statistical tests, and hypothesis testi
    - **Null Hypothesis (H0)**: There is no significant relationship between residual sugar and wine quality.
    - **Alternative Hypothesis (Ha)**: Residual sugar significantly influences wine quality, with balanced levels contributing to higher quality wines.
 
-Statistical Plots:
+Statistical Plots White Wine:
 ![ ](quality-fixed-white.png)
 ![ ](quality-volatile-white.png)
+![ ](quality-citric-white.png)
+![ ](quality-pH-white.png)
+![ ](quality-residual-white.png)
+![ ](quality-fixed-white2.png)
+![ ](quality-volatile-white2.png)
+![ ](quality-citric-white2.png)
+![ ](quality-pH-white2.png)
+![ ](quality-residual-white2.png)
 
 ### Statistical Analysis Results:
 
@@ -142,7 +150,19 @@ A significant negative correlation indicates that excessive residual sugar lower
 
 ---
 
-#### 4. Fixed Acidity vs. Quality (Red Wines)
+Statistical Plots Red Wine:
+![ ](fixed-red.png)
+![ ](volatile-red.png)
+![ ](citric-red.png)
+![ ](pH-red.png)
+![ ](residual-red.png)
+![ ](fixed-red2.png)
+![ ](volatile-red2.png)
+![ ](citric-red2.png)
+![ ](pH-red2.png)
+![ ](residual-red2.png)
+
+#### 1. Fixed Acidity vs. Quality (Red Wines)
 - **Correlation coefficient (r)**: 0.1241
 - **t-statistic**: 4.996
 - **p-value**: 6.50 × 10⁻⁷
@@ -157,7 +177,7 @@ print(cor_test_fixed_acidity_red)
 
 A small positive correlation suggests that moderate acidity might improve the quality of red wines.
 
-#### 5. pH vs. Quality (Red Wines)
+#### 2. pH vs. Quality (Red Wines)
 - **Correlation coefficient (r)**: -0.0577
 - **t-statistic**: -2.311
 - **p-value**: 0.02096
@@ -172,7 +192,7 @@ print(cor_test_pH_red)
 
 A weak negative correlation shows that lower pH (higher acidity) may slightly improve wine quality.
 
-#### 6. Residual Sugar vs. Quality (Red Wines)
+#### 3. Residual Sugar vs. Quality (Red Wines)
 - **Correlation coefficient (r)**: 0.0137
 - **t-statistic**: 0.5488
 - **p-value**: 0.5832
