@@ -91,7 +91,7 @@ The EDA process includes visualizations, statistical tests, and hypothesis testi
 - **95% Confidence Interval**: [-0.1412, -0.0859]
 
 Code:
-> # Correlation test for fixed.acidity vs. quality
+> Correlation test for fixed.acidity vs. quality
 > cor_test_fixed_acidity <- cor.test(wine_data$fixed.acidity, wine_data$quality)
 > cor_test_fixed_acidity
 
@@ -104,7 +104,7 @@ The negative correlation is statistically significant (p < 0.001), though weak. 
 - **95% Confidence Interval**: [0.0716, 0.1271]
 
 Code:
-> # Correlation test for pH vs. quality
+> Correlation test for pH vs. quality
 > cor_test_pH <- cor.test(wine_data$pH, wine_data$quality)
 > cor_test_pH
 
@@ -117,7 +117,7 @@ A weak positive correlation is statistically significant, suggesting higher pH l
 - **95% Confidence Interval**: [-0.1252, -0.0698]
 
 Code:
-> # Correlation test for residual.sugar vs. quality
+> Correlation test for residual.sugar vs. quality
 > cor_test_residual_sugar <- cor.test(wine_data$residual.sugar, wine_data$quality)
 > cor_test_residual_sugar
 
@@ -132,7 +132,7 @@ A significant negative correlation indicates that excessive residual sugar lower
 - **95% Confidence Interval**: [0.0755, 0.1720]
 
 Code:
-> # Correlation test: fixed.acidity vs. quality
+> Correlation test: fixed.acidity vs. quality
 > cor_test_fixed_acidity_red <- cor.test(wine_red$fixed.acidity, wine_red$quality)
 > print(cor_test_fixed_acidity_red)
 
@@ -145,7 +145,7 @@ A small positive correlation suggests that moderate acidity might improve the qu
 - **95% Confidence Interval**: [-0.1065, -0.0087]
 
 Code:
-> # Correlation test: pH vs. quality
+> Correlation test: pH vs. quality
 > cor_test_pH_red <- cor.test(wine_red$pH, wine_red$quality)
 > print(cor_test_pH_red)
 
@@ -158,7 +158,7 @@ A weak negative correlation shows that lower pH (higher acidity) may slightly im
 - **95% Confidence Interval**: [-0.0353, 0.0627]
 
 Code:
-> # Correlation test: residual.sugar vs. quality
+> Correlation test: residual.sugar vs. quality
 > cor_test_residual_sugar_red <- cor.test(wine_red$residual.sugar, wine_red$quality)
 > print(cor_test_residual_sugar_red)
 
