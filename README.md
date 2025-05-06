@@ -89,6 +89,10 @@ The EDA process includes visualizations, statistical tests, and hypothesis testi
    - **Null Hypothesis (H0)**: There is no significant relationship between residual sugar and wine quality.
    - **Alternative Hypothesis (Ha)**: Residual sugar significantly influences wine quality, with balanced levels contributing to higher quality wines.
 
+Statistical Plots:
+![ ](quality-fixed-white.png)
+![ ](quality-volatile-white.png)
+
 ### Statistical Analysis Results:
 
 #### 1. Fixed Acidity vs. Quality (White Wines)
