@@ -89,51 +89,7 @@ The EDA process includes visualizations, statistical tests, and hypothesis testi
    - **Null Hypothesis (H0)**: There is no significant relationship between residual sugar and wine quality.
    - **Alternative Hypothesis (Ha)**: Residual sugar significantly influences wine quality, with balanced levels contributing to higher quality wines.
 
-Statistical Plots (Pearson) White Wine:
-![ ](quality-fixed-white.png)
-This plot shows a negative correlation between quality and fixed acidity in white wine. There is one large outlier.
-![ ](quality-pH-white.png)
-This plot shows a positive correlation between quality and pH in white wine. There are no large outliers.
-![ ](quality-residual-white.png)
-This plot shows a negative correlation between quality and residual sugar in white wine. There is one large outliers.
-![ ](quality-fixed-white2.png)
-This plot shows white wines with high and low levels of fixed acidity are often higher quality and wines with medium levels of fixed acidity are lower quality. There is one large outlier.
-![ ](quality-pH-white2.png)
-This plot shows white wines with high and low levels of pH are often higher quality and wines with medium levels of pH are lower quality. There are no large outliers.
-![ ](quality-residual-white2.png)
-This plot shows that residual sugar does not effect white wine quality. There is one large outlier.
-Code for White Wine Scatter Plots:
-```r
-{
-    p <- ggplot(wine_white, aes(x = quality, y = .data[[feature]])) +
-        geom_point(alpha = 0.5, color = "darkblue") +
-        geom_smooth(method = "lm", color = "red", se = FALSE) +
-        labs(title = paste("Quality vs", feature, "(White Wine)"),
-             x = "Quality Score",
-             y = feature) +
-        theme_minimal()
-    print(p)
-}
-```
-
-Code for White Wine Box Plots:
-```r
-library(ggplot2)
-
-features <- c("fixed.acidity", "volatile.acidity", "citric.acid", "pH", "residual.sugar")
-
-for (feature in features) {
-    p <- ggplot(wine_white, aes(x = factor(quality), y = .data[[feature]])) +
-        geom_boxplot(fill = "skyblue") +
-        labs(title = paste("Distribution of", feature, "by Wine Quality"),
-             x = "Quality Score",
-             y = feature) +
-        theme_minimal()
-    print(p)
-}
-```
-
-### Statistical Analysis Results:
+### Statistical Analysis White Wine:
 
 #### 1. Fixed Acidity vs. Quality (White Wines)
 - **Correlation coefficient (r)**: -0.1137
@@ -188,6 +144,95 @@ cor_test_residual_sugar
 - t-statistic: The t-statistic of -6.860 indicates the result is strong and reliable.
 - p-value: The small p-value (7.72 × 10⁻¹²) shows that the correlation is statistically significant, meaning the observed relationship is unlikely due to chance.
 - 95% Confidence Interval: The true correlation likely falls between -0.1252 and -0.0698, with 95% confidence.
+
+Statistical Plots (Pearson) White Wine:
+![ ](quality-fixed-white.png)
+This plot shows a negative correlation between quality and fixed acidity in white wine. There is one large outlier.
+![ ](quality-pH-white.png)
+This plot shows a positive correlation between quality and pH in white wine. There are no large outliers.
+![ ](quality-residual-white.png)
+This plot shows a negative correlation between quality and residual sugar in white wine. There is one large outliers.
+![ ](quality-fixed-white2.png)
+This plot shows white wines with high and low levels of fixed acidity are often higher quality and wines with medium levels of fixed acidity are lower quality. There is one large outlier.
+![ ](quality-pH-white2.png)
+This plot shows white wines with high and low levels of pH are often higher quality and wines with medium levels of pH are lower quality. There are no large outliers.
+![ ](quality-residual-white2.png)
+This plot shows that residual sugar does not effect white wine quality. There is one large outlier.
+Code for White Wine Scatter Plots:
+```r
+{
+    p <- ggplot(wine_white, aes(x = quality, y = .data[[feature]])) +
+        geom_point(alpha = 0.5, color = "darkblue") +
+        geom_smooth(method = "lm", color = "red", se = FALSE) +
+        labs(title = paste("Quality vs", feature, "(White Wine)"),
+             x = "Quality Score",
+             y = feature) +
+        theme_minimal()
+    print(p)
+}
+```
+
+Code for White Wine Box Plots:
+```r
+library(ggplot2)
+
+features <- c("fixed.acidity", "volatile.acidity", "citric.acid", "pH", "residual.sugar")
+
+for (feature in features) {
+    p <- ggplot(wine_white, aes(x = factor(quality), y = .data[[feature]])) +
+        geom_boxplot(fill = "skyblue") +
+        labs(title = paste("Distribution of", feature, "by Wine Quality"),
+             x = "Quality Score",
+             y = feature) +
+        theme_minimal()
+    print(p)
+}
+```
+
+Statistical Analysis Red Wine:
+
+#### 1. Fixed Acidity vs. Quality (Red Wines)
+- **Correlation coefficient (r)**: 0.1241
+- **t-statistic**: 4.996
+- **p-value**: 6.50 × 10⁻⁷
+- **95% Confidence Interval**: [0.0755, 0.1720]
+
+Code:
+```r
+# Correlation test for fixed.acidity vs. quality (red wines)
+cor_test_fixed_acidity_red <- cor.test(wine_red$fixed.acidity, wine_red$quality)
+print(cor_test_fixed_acidity_red)
+```
+
+- Correlation: A small positive correlation (0.1241) suggests that higher fixed acidity is slightly associated with better red wine quality.
+- t-statistic: The t-statistic of 4.996 shows a strong relationship, making the result significant.
+- p-value: The p-value (6.50 × 10⁻⁷) is very small, indicating a statistically significant result. The correlation is not likely due to chance.
+- 95% Confidence Interval: The true correlation is likely between 0.0755 and 0.1720 with 95% confidence.
+
+#### 2. pH vs. Quality (Red Wines)
+- **Correlation coefficient (r)**: -0.0577
+- **t-statistic**: -2.311
+- **p-value**: 0.02096
+- **95% Confidence Interval**: [-0.1065, -0.0087]
+
+Code:
+```r
+# Correlation test for pH vs. quality (red wines)
+cor_test_pH_red <- cor.test(wine_red$pH, wine_red$quality)
+print(cor_test_pH_red)
+```
+
+- Correlation: A very weak negative correlation means that as pH goes down (acidity increases), wine quality slightly improves.
+- t-statistic: The t-value of -2.311 shows a small but measurable relationship.
+- p-value: Since the p-value is about 0.021, this result is statistically significant, though just barely.
+- 95% Confidence Interval: We can be 95% confident the true correlation lies between -0.1065 and -0.0087.
+
+#### 3. Residual Sugar vs. Quality (Red Wines)
+- **Correlation coefficient (r)**: 0.0137
+- **t-statistic**: 0.5488
+- **p-value**: 0.5832
+- **95% Confidence Interval**: [-0.0353, 0.0627]
+
 
 ---
 
@@ -296,48 +341,6 @@ ggplot(wine_red, aes(x = as.factor(quality), y = residual.sugar)) +
          y = "Residual Sugar") +
     theme_minimal()
 ```
-
-#### 1. Fixed Acidity vs. Quality (Red Wines)
-- **Correlation coefficient (r)**: 0.1241
-- **t-statistic**: 4.996
-- **p-value**: 6.50 × 10⁻⁷
-- **95% Confidence Interval**: [0.0755, 0.1720]
-
-Code:
-```r
-# Correlation test for fixed.acidity vs. quality (red wines)
-cor_test_fixed_acidity_red <- cor.test(wine_red$fixed.acidity, wine_red$quality)
-print(cor_test_fixed_acidity_red)
-```
-
-- Correlation: A small positive correlation (0.1241) suggests that higher fixed acidity is slightly associated with better red wine quality.
-- t-statistic: The t-statistic of 4.996 shows a strong relationship, making the result significant.
-- p-value: The p-value (6.50 × 10⁻⁷) is very small, indicating a statistically significant result. The correlation is not likely due to chance.
-- 95% Confidence Interval: The true correlation is likely between 0.0755 and 0.1720 with 95% confidence.
-
-#### 2. pH vs. Quality (Red Wines)
-- **Correlation coefficient (r)**: -0.0577
-- **t-statistic**: -2.311
-- **p-value**: 0.02096
-- **95% Confidence Interval**: [-0.1065, -0.0087]
-
-Code:
-```r
-# Correlation test for pH vs. quality (red wines)
-cor_test_pH_red <- cor.test(wine_red$pH, wine_red$quality)
-print(cor_test_pH_red)
-```
-
-- Correlation: A very weak negative correlation means that as pH goes down (acidity increases), wine quality slightly improves.
-- t-statistic: The t-value of -2.311 shows a small but measurable relationship.
-- p-value: Since the p-value is about 0.021, this result is statistically significant, though just barely.
-- 95% Confidence Interval: We can be 95% confident the true correlation lies between -0.1065 and -0.0087.
-
-#### 3. Residual Sugar vs. Quality (Red Wines)
-- **Correlation coefficient (r)**: 0.0137
-- **t-statistic**: 0.5488
-- **p-value**: 0.5832
-- **95% Confidence Interval**: [-0.0353, 0.0627]
 
 ### Asumptions for White Wine
 
