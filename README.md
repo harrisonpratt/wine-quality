@@ -91,13 +91,9 @@ The EDA process includes visualizations, statistical tests, and hypothesis testi
 
 Statistical Plots White Wine:
 ![ ](quality-fixed-white.png)
-![ ](quality-volatile-white.png)
-![ ](quality-citric-white.png)
 ![ ](quality-pH-white.png)
 ![ ](quality-residual-white.png)
 ![ ](quality-fixed-white2.png)
-![ ](quality-volatile-white2.png)
-![ ](quality-citric-white2.png)
 ![ ](quality-pH-white2.png)
 ![ ](quality-residual-white2.png)
 
@@ -192,13 +188,9 @@ cor_test_residual_sugar
 
 Statistical Plots Red Wine:
 ![ ](fixed-red.png)
-![ ](volatile-red.png)
-![ ](citric-red.png)
 ![ ](pH-red.png)
 ![ ](residual-red.png)
 ![ ](fixed-red2.png)
-![ ](volatile-red2.png)
-![ ](citric-red2.png)
 ![ ](pH-red2.png)
 ![ ](residual-red2.png)
 
