@@ -89,7 +89,7 @@ The EDA process includes visualizations, statistical tests, and hypothesis testi
    - **Null Hypothesis (H0)**: There is no significant relationship between residual sugar and wine quality.
    - **Alternative Hypothesis (Ha)**: Residual sugar significantly influences wine quality, with balanced levels contributing to higher quality wines.
 
-Statistical Plots White Wine:
+Statistical Plots (Pearson) White Wine:
 ![ ](quality-fixed-white.png)
 This plot shows a negative correlation between quality and fixed acidity in white wine. There is one large outlier.
 ![ ](quality-pH-white.png)
@@ -191,7 +191,7 @@ cor_test_residual_sugar
 
 ---
 
-Statistical Plots Red Wine:
+Statistical Plots (Pearson) Red Wine:
 ![ ](fixed-red.png)
 This plot shows a positive correlation between quality and fixed acidity in red wine. There are no large outliers.
 ![ ](pH-red.png)
@@ -348,7 +348,19 @@ print(cor_test_pH_red)
 These models aren’t reliable because they don’t meet the key assumptions of linear regression. The residuals don’t look random, which suggests the relationships might not be truly linear. The errors also aren’t normally distributed, and their spread isn’t consistent across the data. On top of that, a few data points have a lot of influence on the models. Altogether, this means the models probably won’t make good predictions or give accurate insights.
 
 ### Asumptions for Red Wine
+
+![ ](red-resid1.png)
+![ ](red-resid2.png)
+![ ](red-resid3.png)
+
+These models for red wine also aren’t reliable because they break some of the key rules that linear regression depends on. The residuals don’t look randomly scattered, which hints that the relationship between the variables might not be truly linear. The errors also don’t follow a normal pattern, and their spread changes across different values, which is a problem. On top of that, a few points have a lot of pull on the model, which can throw off the results. All of this suggests that these models probably won’t make solid predictions or give trustworthy insights.
+
+Now, because of this, we need to use a Spearman model. It’s better for data that doesn’t follow a clear linear pattern or meet the usual assumptions of linear regression.
+
 ---
+
+Statistical Plots (Spearman) White Wine:
+
 
 ### Conclusion:
 
