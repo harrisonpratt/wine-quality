@@ -89,7 +89,7 @@ The EDA process includes visualizations, statistical tests, and hypothesis testi
    - **Null Hypothesis (H0)**: There is no significant relationship between residual sugar and wine quality.
    - **Alternative Hypothesis (Ha)**: Residual sugar significantly influences wine quality, with balanced levels contributing to higher quality wines.
 
-### Statistical Analysis White Wine:
+### Statistical Analysis (Pearson) White Wine:
 
 #### 1. Fixed Acidity vs. Quality (White Wines)
 - **Correlation coefficient (r)**: -0.1137
@@ -189,7 +189,7 @@ for (feature in features) {
 }
 ```
 
-Statistical Analysis Red Wine:
+Statistical Analysis (Pearson) Red Wine:
 
 #### 1. Fixed Acidity vs. Quality (Red Wines)
 - **Correlation coefficient (r)**: 0.1241
@@ -362,6 +362,12 @@ Now, because of this, we need to use a Spearman model. It’s better for data th
 
 ---
 
+Statistical Analysis (Spearman) White Wine
+
+1. Quality vs Fixed Acidity Spearman Rank Correlation: -0.084
+2. Quality vs pH Spearman Rank Correlation: 0.109
+3. Quality vs Residual Sugar Spearman Rank Correlation: -0.082
+
 Statistical Plots (Spearman) White Wine:
 
 ![ ](spr1.png)
@@ -372,6 +378,12 @@ This plot shows a positive correlation between quality and pH in white wine.
 This plot shows a negative correlation between quality and residual sugar in white wine.
 
 Overall, the white wine plots show weak correlations between quality and the three variables. Fixed acidity has a slight negative correlation with quality, pH has a slight positive one, and residual sugar shows a very weak negative trend. Since none of the relationships are strong, we can’t make confident predictions about wine quality using just these variables. These results suggest other factors might play a more important role in determining white wine quality.
+
+Statistical Analysis (Spearman) Red Wine
+
+1. Quality vs Fixed Acidity Spearman Rank Correlation: 0.114
+2. Quality vs pH Spearman Rank Correlation: -0.044
+3. Quality vs Residual Sugar Spearman Rank Correlation: 0.032
 
 Statistical Plots (Spearman) Red Wine:
 ![ ](spr4.png)
