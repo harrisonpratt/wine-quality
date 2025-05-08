@@ -368,6 +368,8 @@ This plot shows a positive correlation between quality and pH in white wine.
 ![ ](spr3.png)
 This plot shows a negative correlation between quality and residual sugar in white wine.
 
+Overall, the white wine plots show weak correlations between quality and the three variables. Fixed acidity has a slight negative correlation with quality, pH has a slight positive one, and residual sugar shows a very weak negative trend. Since none of the relationships are strong, we can’t make confident predictions about wine quality using just these variables. These results suggest other factors might play a more important role in determining white wine quality.
+
 Statistical Plots (Spearman) Red Wine:
 ![ ](spr4.png)
 This plot shows a positive correlation between quality and fixed acidity in red wine.
@@ -376,15 +378,12 @@ This plot shows a negative correlation between quality and pH in red wine.
 ![ ](spr6.png)
 This plot shows almost no correlation between quality and residual sugar in red wine.
 
+For the red wine plots, the correlations between quality and the three variables are also quite weak. Fixed acidity shows a slight positive correlation with quality, pH has a weak negative correlation, and residual sugar has a weak positive correlation. These findings indicate that these variables alone don’t provide much predictive power for red wine quality. As with the white wine analysis, it’s likely that other factors contribute more significantly to determining red wine quality.
+
 ### Conclusion:
 
-This analysis investigated how attributes like acidity, pH, and residual sugar influence wine quality. 
+The project involved analyzing the relationship between various chemical properties of red and white wines and their quality ratings. Initially, we applied Pearson’s correlation to examine these relationships, assuming a linear relationship between the variables. However, after checking the assumptions (like normality and constant variance), we realized that Pearson wasn’t suitable for the data. This led us to switch to Spearman’s Rank Correlation, which doesn’t require these assumptions and is more appropriate for capturing non-linear relationships.
 
-- For **white wines**, higher levels of fixed acidity and residual sugar were weakly linked to lower quality, while a balanced pH showed a slight positive relationship with higher quality.
-- For **red wines**, fixed acidity showed a weak positive relationship with quality, while pH had a weak negative correlation with better quality wines. Residual sugar did not significantly impact red wine quality.
-
-These results support the idea that wine characteristics play a role in quality, but taste and personal preferences remain crucial factors in wine evaluation.
-
-The findings of this exploratory data analysis can be used to guide winemakers in balancing important factors like acidity, pH, and residual sugar. Understanding the relationships between these attributes and wine quality allows for more informed decisions during the winemaking process.
+In this analysis, we explored the relationships between wine quality and key chemical properties such as fixed acidity, pH, and residual sugar for both white and red wines. The Spearman correlation results showed weak correlations between these variables and wine quality, indicating that factors like acidity, pH, and sugar content alone may not be strong predictors of wine quality. This suggests that other factors, possibly more complex or related to the winemaking process, could have a greater influence on quality. Overall, our findings highlight the need for a broader approach to understanding wine quality.
 
 ---
