@@ -91,12 +91,17 @@ The EDA process includes visualizations, statistical tests, and hypothesis testi
 
 Statistical Plots White Wine:
 ![ ](quality-fixed-white.png)
+This plot shows a negative correlation between quality and fixed acidity. There is one large outlier.
 ![ ](quality-pH-white.png)
+This plot shows a positive correlation between quality and pH. There are no large outliers.
 ![ ](quality-residual-white.png)
+This plot shows a negative correlation between quality and residual sugar. There is one large outliers.
 ![ ](quality-fixed-white2.png)
+This plot shows wines with high and low levels of fixed acidity are often higher quality and wines with medium levels of fixed acidity are lower quality. There is one large outlier.
 ![ ](quality-pH-white2.png)
+This plot shows wines with high and low levels of pH are often higher quality and wines with medium levels of pH are lower quality. There are no large outliers.
 ![ ](quality-residual-white2.png)
-
+This plot shows that residual sugar does not effect wine quality. There is one large outlier.
 Code for White Wine Scatter Plots:
 ```r
 {
