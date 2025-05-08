@@ -361,6 +361,9 @@ Now, because of this, we need to use a Spearman model. It’s better for data th
 
 Statistical Plots (Spearman) White Wine:
 
+![ ](spr1.png)
+![ ](spr2.png)
+![ ](spr3.png)
 
 ### Conclusion:
 
