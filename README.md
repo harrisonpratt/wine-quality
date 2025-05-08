@@ -9,7 +9,7 @@
 
 ## 1. Business Understanding
 
-When determining if a wine is considered high-quality, there are certain aspects that good wines often have. One of these attributes is having a good acidity. A medium amount of acidity can add freshness and structure but too much or too little can unbalance a wine. Another attribute high-quality wines often have is a good pH level. A pH that is too low or too high can negatively impact the taste of the wine, making it lower-quality. The next important factor is having the right amount of residual sugar. Too much or too little residual sugar can result in imbalanced flavors. Having a balance between these attributes helps create a balanced wine with complexity which are the most important aspects of a good wine.
+When determining if a wine is considered high-quality, there are certain aspects that good wines often have. One of these attributes is having a good fixed acidity. A medium amount of acidity can add freshness and structure but too much or too little can unbalance a wine. Another attribute high-quality wines often have is a good pH level. A pH that is too low or too high can negatively impact the taste of the wine, making it lower-quality. The next important factor is having the right amount of residual sugar. Too much or too little residual sugar can result in imbalanced flavors. Having a balance between these attributes helps create a balanced wine with complexity which are the most important aspects of a good wine.
 
 - **Acidity**: A medium amount of acidity can add freshness and structure to the wine. However, too much or too little acidity can unbalance the wine.
 - **pH Level**: A pH level that is too low or too high can negatively impact the wine's taste, leading to a lower-quality wine.
