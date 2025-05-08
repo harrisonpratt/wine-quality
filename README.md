@@ -362,8 +362,19 @@ Now, because of this, we need to use a Spearman model. It’s better for data th
 Statistical Plots (Spearman) White Wine:
 
 ![ ](spr1.png)
+This plot shows a negative correlation between quality and fixed acidity in white wine.
 ![ ](spr2.png)
+This plot shows a positive correlation between quality and pH in white wine.
 ![ ](spr3.png)
+This plot shows a negative correlation between quality and residual sugar in white wine.
+
+Statistical Plots (Spearman) Red Wine:
+![ ](spr4.png)
+This plot shows a positive correlation between quality and fixed acidity in red wine.
+![ ](spr5.png)
+This plot shows a negative correlation between quality and pH in red wine.
+![ ](spr6.png)
+This plot shows almost no correlation between quality and residual sugar in red wine.
 
 ### Conclusion:
 
