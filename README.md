@@ -147,7 +147,10 @@ cor_test_fixed_acidity <- cor.test(wine_data$fixed.acidity, wine_data$quality)
 cor_test_fixed_acidity
 ```
 
-The negative correlation is statistically significant (p < 0.001), though weak. As fixed acidity increases, quality slightly decreases.
+- Correlation: There’s a weak negative relationship between fixed acidity and quality. This means that as fixed acidity increases, the quality of the wine tends to slightly decrease.
+- t-statistic: The t-statistic of -8.005 shows that the result is quite strong and unlikely to be random.
+- p-value: The very small p-value (1.48 × 10⁻¹⁵) indicates that this result is statistically significant, meaning the negative correlation is real and not due to chance.
+- 95% Confidence Interval: The true correlation between fixed acidity and quality is likely between -0.1412 and -0.0859, with 95% confidence.
 
 #### 2. pH vs. Quality (White Wines)
 - **Correlation coefficient (r)**: 0.0994
@@ -162,7 +165,10 @@ cor_test_pH <- cor.test(wine_data$pH, wine_data$quality)
 cor_test_pH
 ```
 
-A weak positive correlation is statistically significant, suggesting higher pH levels are associated with better wine quality.
+- Correlation: There’s a weak positive relationship between pH and quality. This means that wines with higher pH levels tend to have slightly better quality.
+- t-statistic: The t-statistic of 6.992 shows the result is strong and reliable.
+- p-value: The small p-value (3.08 × 10⁻¹²) indicates that the correlation is statistically significant, meaning it is not likely to be due to chance.
+- 95% Confidence Interval: The true correlation is likely between 0.0716 and 0.1271, with 95% confidence.
 
 #### 3. Residual Sugar vs. Quality (White Wines)
 - **Correlation coefficient (r)**: -0.0976
@@ -177,7 +183,10 @@ cor_test_residual_sugar <- cor.test(wine_data$residual.sugar, wine_data$quality)
 cor_test_residual_sugar
 ```
 
-A significant negative correlation indicates that excessive residual sugar lowers wine quality.
+- Correlation: There’s a weak negative relationship between residual sugar and quality. As residual sugar increases, wine quality slightly decreases.
+- t-statistic: The t-statistic of -6.860 indicates the result is strong and reliable.
+- p-value: The small p-value (7.72 × 10⁻¹²) shows that the correlation is statistically significant, meaning the observed relationship is unlikely due to chance.
+- 95% Confidence Interval: The true correlation likely falls between -0.1252 and -0.0698, with 95% confidence.
 
 ---
 
@@ -299,7 +308,10 @@ cor_test_fixed_acidity_red <- cor.test(wine_red$fixed.acidity, wine_red$quality)
 print(cor_test_fixed_acidity_red)
 ```
 
-A small positive correlation suggests that moderate acidity might improve the quality of red wines.
+- Correlation: A small positive correlation (0.1241) suggests that higher fixed acidity is slightly associated with better red wine quality.
+- t-statistic: The t-statistic of 4.996 shows a strong relationship, making the result significant.
+- p-value: The p-value (6.50 × 10⁻⁷) is very small, indicating a statistically significant result. The correlation is not likely due to chance.
+- 95% Confidence Interval: The true correlation is likely between 0.0755 and 0.1720 with 95% confidence.
 
 #### 2. pH vs. Quality (Red Wines)
 - **Correlation coefficient (r)**: -0.0577
@@ -314,7 +326,10 @@ cor_test_pH_red <- cor.test(wine_red$pH, wine_red$quality)
 print(cor_test_pH_red)
 ```
 
-A weak negative correlation shows that lower pH (higher acidity) may slightly improve wine quality.
+- Correlation: A very weak negative correlation means that as pH goes down (acidity increases), wine quality slightly improves.
+- t-statistic: The t-value of -2.311 shows a small but measurable relationship.
+- p-value: Since the p-value is about 0.021, this result is statistically significant, though just barely.
+- 95% Confidence Interval: We can be 95% confident the true correlation lies between -0.1065 and -0.0087.
 
 #### 3. Residual Sugar vs. Quality (Red Wines)
 - **Correlation coefficient (r)**: 0.0137
@@ -329,7 +344,10 @@ cor_test_residual_sugar_red <- cor.test(wine_red$residual.sugar, wine_red$qualit
 print(cor_test_residual_sugar_red)
 ```
 
-No significant correlation was found between residual sugar and wine quality for red wines.
+- Correlation: The correlation is very close to zero, which means there’s basically no relationship between sugar content and wine quality.
+- t-statistic: The small t-value tells us the result isn’t strong.
+- p-value: A high p-value (0.5832) means this finding is not statistically significant.
+- Confidence Interval: The interval includes zero, supporting that there’s likely no true effect.
 
 ---
 
