@@ -91,17 +91,17 @@ The EDA process includes visualizations, statistical tests, and hypothesis testi
 
 Statistical Plots White Wine:
 ![ ](quality-fixed-white.png)
-This plot shows a negative correlation between quality and fixed acidity. There is one large outlier.
+This plot shows a negative correlation between quality and fixed acidity in white wine. There is one large outlier.
 ![ ](quality-pH-white.png)
-This plot shows a positive correlation between quality and pH. There are no large outliers.
+This plot shows a positive correlation between quality and pH in white wine. There are no large outliers.
 ![ ](quality-residual-white.png)
-This plot shows a negative correlation between quality and residual sugar. There is one large outliers.
+This plot shows a negative correlation between quality and residual sugar in white wine. There is one large outliers.
 ![ ](quality-fixed-white2.png)
-This plot shows wines with high and low levels of fixed acidity are often higher quality and wines with medium levels of fixed acidity are lower quality. There is one large outlier.
+This plot shows white wines with high and low levels of fixed acidity are often higher quality and wines with medium levels of fixed acidity are lower quality. There is one large outlier.
 ![ ](quality-pH-white2.png)
-This plot shows wines with high and low levels of pH are often higher quality and wines with medium levels of pH are lower quality. There are no large outliers.
+This plot shows white wines with high and low levels of pH are often higher quality and wines with medium levels of pH are lower quality. There are no large outliers.
 ![ ](quality-residual-white2.png)
-This plot shows that residual sugar does not effect wine quality. There is one large outlier.
+This plot shows that residual sugar does not effect white wine quality. There is one large outlier.
 Code for White Wine Scatter Plots:
 ```r
 {
@@ -193,12 +193,17 @@ cor_test_residual_sugar
 
 Statistical Plots Red Wine:
 ![ ](fixed-red.png)
+This plot shows a positive correlation between quality and fixed acidity in red wine. There are no large outliers.
 ![ ](pH-red.png)
+This plot shows a negative correlation between quality and pH in red wine. There are no large outliers.
 ![ ](residual-red.png)
+This plot shows no correlation between quality and pH in red wine. There are three large outliers.
 ![ ](fixed-red2.png)
+This plot shows a positive correlation between quality and fixed acidity in red wine. There are five large outliers.
 ![ ](pH-red2.png)
+This plot shows a negative correlation between quality and pH in red wine. There are no large outliers.
 ![ ](residual-red2.png)
-
+This plot shows no correlation between quality and pH in red wine. There are three large outliers.
 Code for Red Wine Scatter Plots Plots:
 ```r
 # Scatterplots with regression lines for Red Wine
