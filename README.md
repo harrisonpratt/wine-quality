@@ -339,6 +339,8 @@ print(cor_test_pH_red)
 - **p-value**: 0.5832
 - **95% Confidence Interval**: [-0.0353, 0.0627]
 
+### Asumption for 
+
 Code:
 ```r
 # Correlation test for residual.sugar vs. quality (red wines)
