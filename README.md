@@ -345,6 +345,9 @@ print(cor_test_pH_red)
 ![ ](white-resid2.png)
 ![ ](white-resid3.png)
 
+These models aren’t reliable because they don’t meet the key assumptions of linear regression. The residuals don’t look random, which suggests the relationships might not be truly linear. The errors also aren’t normally distributed, and their spread isn’t consistent across the data. On top of that, a few data points have a lot of influence on the models. Altogether, this means the models probably won’t make good predictions or give accurate insights.
+
+### Asumptions for Red Wine
 ---
 
 ### Conclusion:
