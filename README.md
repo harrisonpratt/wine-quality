@@ -339,19 +339,9 @@ print(cor_test_pH_red)
 - **p-value**: 0.5832
 - **95% Confidence Interval**: [-0.0353, 0.0627]
 
-### Asumption for 
+### Asumptions for White Wine
 
-Code:
-```r
-# Correlation test for residual.sugar vs. quality (red wines)
-cor_test_residual_sugar_red <- cor.test(wine_red$residual.sugar, wine_red$quality)
-print(cor_test_residual_sugar_red)
-```
 
-- Correlation: The correlation is very close to zero, which means there’s basically no relationship between sugar content and wine quality.
-- t-statistic: The small t-value tells us the result isn’t strong.
-- p-value: A high p-value (0.5832) means this finding is not statistically significant.
-- Confidence Interval: The interval includes zero, supporting that there’s likely no true effect.
 
 ---
 
