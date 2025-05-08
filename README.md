@@ -341,7 +341,9 @@ print(cor_test_pH_red)
 
 ### Asumptions for White Wine
 
-
+![ ](white-resid1.png)
+![ ](white-resid2.png)
+![ ](white-resid3.png)
 
 ---
 
